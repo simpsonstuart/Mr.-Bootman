@@ -1387,14 +1387,17 @@ namespace MrBootman
             } // foreach
 
             // Spit out Drive table info
-            BootmanLog.LogInfo(txtLogOutput, "**** Drive Map ****");
-            foreach (DiskPartDriveMap item in oDriveDict.Values)
-            {
-                BootmanLog.LogInfo(txtLogOutput
-                    , item.ParentDriveNumber
-                    + "  " + item.Info 
-                    + "  " + item.Letter
-                    + "  " + item.ParentDriveType);
+            if (Properties.Settings.Default.DebugOn)
+            { 
+                BootmanLog.LogInfo(txtLogOutput, "**** Drive Map ****");
+                foreach (DiskPartDriveMap item in oDriveDict.Values)
+                {
+                    BootmanLog.LogInfo(txtLogOutput
+                        , item.ParentDriveNumber
+                        + "  " + item.Info 
+                        + "  " + item.Letter
+                        + "  " + item.ParentDriveType);
+                }
             }
 
             return oDriveDict;
@@ -1526,6 +1529,9 @@ namespace MrBootman
             RefreshAllDriveComboBoxes();
         }
         #endregion App Action buttons
+
+        #region Hide and Display buttons
+
         //hide buttons that are not needed on info screen
         private void TabItemAbout_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -1577,6 +1583,8 @@ namespace MrBootman
                 frmAcceptUACOverride.Show();
             }
         }
+
+        #endregion Hide and Display buttons
     }
     
     #region Application Data Classes

@@ -468,13 +468,7 @@ namespace MrBootman
             return functionReturnValue;
         }
 
-        // Usage:
-        //Dim nwDrives As New List(Of String)
-        //GetNetworkDrives(Nothing, nwDrives)
 
-        //For Each item As String In nwDrives
-        //    'ListBox1.Items.Add(item)
-        //Next
         public bool GetNetworkDrives(ref NETRESOURCE o
             , ref List<string> networkDriveCollection)
         {
@@ -540,13 +534,7 @@ namespace MrBootman
             return true;
         }
 
-        // Usage:
-        //Dim nwComputers As New List(Of String)
-        //GetNetworkComputers(Nothing, nwComputers)
 
-        //For Each item As String In nwComputers
-        //    ListBox1.Items.Add(item)
-        //Next
         public bool GetNetworkComputers(ref NETRESOURCE o
             , ref List<string> networkComputersCollection)
         {
